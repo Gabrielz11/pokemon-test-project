@@ -1,6 +1,6 @@
-from locust import HttpUser, task
+from locust import FastHttpUser, task
 
-class Pokemon(HttpUser):  
+class Pokemon(FastHttpUser):  
     @task
     def list(self):        
         self.client.get("/pokemon")
