@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
 import cors from 'cors';
+import compression from 'compression';
 import swaggerUI from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import { MysqlDataSource } from './config/database';
@@ -10,6 +11,7 @@ import routes from './routes';
 const app = express();
 
 app.use(express.json());
+// app.use(compression()); // Middleware de compressão GZIP desativado!
 app.use(cors({ origin: true }));
 app.use(routes);
 
